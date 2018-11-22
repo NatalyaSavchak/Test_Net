@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileHierarchyToJSONConverter</name>
+    </assembly>
+    <members>
+        <member name="T:FileHierarchy.FilePresentation">
+            <summary>
+            Represents a file in the directory. Contains name, size and path of the file.
+            </summary>
+        </member>
+        <member name="P:FileHierarchy.FilePresentation.Name">
+            <summary>
+            Gets the name of a current instance of the FileHierarchy.File class.
+            </summary>
+        </member>
+        <member name="P:FileHierarchy.FilePresentation.Size">
+            <summary>
+            Gets the size of a current instance of the FileHierarchy.File class.
+            </summary>
+        </member>
+        <member name="P:FileHierarchy.FilePresentation.Path">
+            <summary>
+            Gets the path of a current instance of the FileHierarchy.File class.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.FilePresentation.#ctor">
+            <summary>
+            Initializes a new instance of the FileHierarchy.File class, which  has initial values by default.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.FilePresentation.#ctor(System.String,System.Int64,System.String)">
+            <summary>
+            Initializes a new instance of the FileHierarchy.File class with value in parameters.
+            
+            Parameters:
+                name:
+                    A name of a current instance of the FileHierarchy.File class.
+                size:
+                    A Size of a current instance of the FileHierarchy.File class.
+                path:
+                    A path of a current instance of the FileHierarchy.File class.
+            </summary>
+        </member>
+        <member name="T:FileHierarchy.Folder">
+            <summary>
+            Represents the folder in the directory. Contains name, date of creation, inner files and folders of the current folder.
+            </summary>
+        </member>
+        <member name="P:FileHierarchy.Folder.Name">
+            <summary>
+            Gets the name of the current instance of the FileHierarchy.Folder class.
+            </summary>
+        </member>
+        <member name="P:FileHierarchy.Folder.DateCreated">
+            <summary>
+            Gets the date of creation of the current instance of the FileHierarchy.Folder class.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.Folder.#ctor">
+            <summary>
+            Initializes a new instance of the FileHierarchy.Folder class, which has initial values by default.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.Folder.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the FileHierarchy.Folder class with value in parameters.
+            
+            Parameters:
+                name:
+                    A name of the current instance of the FileHierarchy.Folder class.
+                dateCreated:
+                    A date of creation of the current instance of the FileHierarchy.Folder class.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.Folder.AddFolder(FileHierarchy.Folder)">
+            <summary>
+            Adds another instance of the FileHierarchy.Folder class as a child to the current instance.
+            
+            parameters:
+                 folder:
+                    An instance of the FileHierarchy.Folder class, which is need to add to the current 
+                    instance as a child.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.Folder.AddFile(FileHierarchy.FilePresentation)">
+            <summary>
+            Adds the instance of the FileHierarchy.File class to the current instance.
+            
+            parameters:
+                 file:
+                    An inctance of the FileHierarchy.File class, which is need to add to the current instance.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.Folder.ToConvertToJson(System.String,System.String)">
+            <summary>
+            Converts the directory to JSON format.
+            
+            parameters:
+                 path:
+                    A path to the directory, which has to be converted.
+                 destinationPath:
+                    A path to the directory, where the JSON-file has to be saved.
+             
+            exceptions:
+                 ConvertToJsonMethodException:
+                    The directory at the specified path does not exist.
+            
+            </summary>
+        </member>
+        <member name="T:FileHierarchy.ConvertToJsonMethodException">
+            <summary>
+            Defines ConvertToJson method exceptions.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.ConvertToJsonMethodException.#ctor">
+            <summary>
+            Initializes a new instance of class System.ApplicationException.ConvertToJsonMethodException.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.ConvertToJsonMethodException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of class System.ApplicationException.ConvertToJsonMethodException 
+            with the specified error message.
+            
+            Parameters:
+                message:
+                    A message describing the error.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.ConvertToJsonMethodException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of class System.ApplicationException.ConvertToJsonMethodException 
+            with the specified error message and a link to the internal exception that triggered this exception.
+            
+            Parameters:
+                message:
+                    A message describing the error.
+                inner:
+                    Exception that is the reason for the current exception. If the innerException parameter
+                    is not a NULL pointer, the current exception occurred in the catch block that is being processed
+                    internal exception.
+            </summary>
+        </member>
+        <member name="M:FileHierarchy.ConvertToJsonMethodException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+             <summary>
+             Initializes a new instance of the System.ApplicationException.ConvertToJsonMethodException class 
+             with serializations data
+            
+             Parameters:
+                 info:
+                     Object containing serialized object data.
+                 context:
+                     Context information about the source or destination.
+             </summary>
+        </member>
+    </members>
+</doc>
